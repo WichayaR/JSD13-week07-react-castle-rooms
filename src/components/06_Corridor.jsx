@@ -1,0 +1,12 @@
+import Gallery from "./07_Gallery";
+
+export default function Corridor({ question, answer, setAnswer }) {
+  return (
+    <div className="flex flex-col justify-center items-center p-8 bg-blue-500 w-[90%] text-black">
+      <h1 className="mb-4 text-xl">Corridor</h1>
+      
+      {/* นำ Gallery มาซ้อน และส่ง props ต่อ */}
+      <Gallery question={question} answer={answer} setAnswer={setAnswer} />
+    </div>
+  );
+}
