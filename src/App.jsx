@@ -2,13 +2,41 @@ import { useState } from "react";
 import Castle from "./components/01_Castle";
 
 export default function App() {
-  const [question, setQuestion] = useState("hello?");
-  const [answer, setAnswer] = useState("hey help me!");
+  const [question, setQuestion] = useState("");
+
+  const [answer, setAnswer] = useState("");
+
+  const handleQuestion = (e) => {
+    // console.log(e);
+    setQuestion(e.target.value);
+  };
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-gray-900 text-white">
-      {/* ส่งข้อมูลลงไปใน Castle */}
-      <Castle question={question} answer={answer} setAnswer={setAnswer} />
+      <p className="text-violet-300">Message for Secret Room:
+        <span className="text-amber-300">
+          {question ? `✅ ${question}` : "⌛ Waiting for a message...."}
+        </span>
+      </p>
+      
+      <textarea 
+        value={question} 
+        onChange={handleQuestion} 
+        className = "bg-white text-black rounded px-2 py-1"
+        placeholder = "Type your message here..."
+      />
+
+      <p className="text-purple-300 mt-4 mb-4">
+        Reply from Secret Room:
+        <span className="text-green-300 ml-2">
+          {answer ? `✅ ${answer}` : "⏳ Waiting for a reply...."}
+        </span>
+      </p>
+      
+      <Castle 
+      question={question} 
+      answer={answer} 
+      setAnswer={setAnswer} />
     </div>
   );
 }

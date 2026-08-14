@@ -1,4 +1,5 @@
 export default function SecretRoom({ question, answer, setAnswer }) {
+ 
   return (
     <div className="flex flex-col justify-center items-center p-8 bg-gray-800 text-white rounded-md">
       <h1 className="text-2xl mb-4">SecretRoom</h1>
