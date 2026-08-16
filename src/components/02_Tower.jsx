@@ -13,7 +13,6 @@ export default function Tower({ question, answer, setAnswer }) {
         Reply from Secret Room: {answer ? `✅ ${answer}` : "⏳ Waiting..."}
       </p>
 
-      {/* นำ Chamber มาซ้อน และส่ง props ต่อ */}
       <Chamber 
       question={question} 
       answer={answer} 

@@ -13,7 +13,6 @@ export default function Chamber({ question, answer, setAnswer }) {
         Reply from Secret Room: {answer ? `✅ ${answer}` : "⏳ Waiting..."}
       </p>
 
-      {/* นำ Room มาซ้อน และส่ง props ต่อ */}
       <Room 
       question={question} 
       answer={answer} 

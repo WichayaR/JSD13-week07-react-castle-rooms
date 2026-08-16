@@ -13,7 +13,6 @@ export default function Room({ question, answer, setAnswer }) {
         Reply from Secret Room: {answer ? `✅ ${answer}` : "⏳ Waiting..."}
       </p>
       
-      {/* นำ Hall มาซ้อน และส่ง props ต่อ */}
       <Hall 
       question={question} 
       answer={answer} 

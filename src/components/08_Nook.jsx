@@ -12,8 +12,7 @@ export default function Nook({ question, answer, setAnswer }) {
       <p className="text-white text-sm mb-4">
         Reply from Secret Room: {answer ? `✅ ${answer}` : "⏳ Waiting..."}
       </p>
-      
-      {/* นำ SecretRoom มาซ้อน และส่ง props ต่อ */}
+  
       <SecretRoom 
       question={question} 
       answer={answer} 

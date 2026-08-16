@@ -12,8 +12,7 @@ export default function Gallery({ question, answer, setAnswer }) {
       <p className="text-white text-sm mb-4">
         Reply from Secret Room: {answer ? `✅ ${answer}` : "⏳ Waiting..."}
       </p>
-      
-      {/* นำ Nook มาซ้อน และส่ง props ต่อ */}
+ 
       <Nook 
       question={question} 
       answer={answer} 

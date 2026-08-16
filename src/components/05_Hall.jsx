@@ -13,7 +13,6 @@ export default function Hall({ question, answer, setAnswer }) {
         Reply from Secret Room: {answer ? `✅ ${answer}` : "⏳ Waiting..."}
       </p>
       
-      {/* นำ Corridor มาซ้อน และส่ง props ต่อ */}
       <Corridor 
       question={question} 
       answer={answer} 
