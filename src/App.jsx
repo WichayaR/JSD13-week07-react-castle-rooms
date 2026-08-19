@@ -2,41 +2,42 @@ import { useState } from "react";
 import Castle from "./components/01_Castle";
 
 export default function App() {
+  // declare React's state variable
   const [question, setQuestion] = useState("");
-
   const [answer, setAnswer] = useState("");
 
   const handleQuestion = (e) => {
-    // console.log(e);
+    console.log(e);
     setQuestion(e.target.value);
   };
 
-  return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-gray-900 text-white">
-      <p className="text-violet-300">Message for Secret Room:
-        <span className="text-amber-300">
-          {question ? `✅ ${question}` : "⌛ Waiting for a message...."}
-        </span>
-      </p>
-      
-      <textarea 
-        value={question} 
-        onChange={handleQuestion} 
-        className = "bg-white text-black rounded px-2 py-1"
-        placeholder = "Type your message here..."
-      />
+  const handleAnswer = (e) => {
+    console.log(e);
+    setAnswer(e.target.value);
+  };
 
-      <p className="text-purple-300 mt-4 mb-4">
-        Reply from Secret Room:
-        <span className="text-green-300 ml-2">
-          {answer ? `✅ ${answer}` : "⏳ Waiting for a reply...."}
+  return (
+    <div className="flex flex-col justify-center items-center min-h-screen bg-gray-800 text-white pb-80 py-10 gap-y-4">
+      <p className="text-purple-300">
+        Message for Secret Room:{" "}
+        <span className="text-yellow-300">
+          {question ? `✅ ${question}` : "⏳ Waiting for a message..."}
         </span>
       </p>
-      
-      <Castle 
-      question={question} 
-      answer={answer} 
-      setAnswer={setAnswer} />
+
+      <textarea
+        value={question}
+        onChange={handleQuestion}
+        className="bg-white text-black rounded px-2 py-1"
+        placeholder="Type your message here..."
+      />
+      <p className="text-green-300">
+        Reply from the Secret Room:{" "}
+        <span className="text-sky-300">
+          {answer ? `✅ ${answer}` : "⏳ Waiting for a message..."}
+        </span>
+      </p>
+      <Castle question={question} answer={answer} handleAnswer={handleAnswer} />
     </div>
   );
 }

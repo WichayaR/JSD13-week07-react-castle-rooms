@@ -1,18 +1,25 @@
-export default function SecretRoom({ question, answer, setAnswer }) {
- 
+export default function SecretRoom({ question, answer, handleAnswer }) {
   return (
-    <div className="flex flex-col justify-center items-center p-8 bg-gray-800 text-white rounded-md">
-      <h1 className="text-2xl mb-4">SecretRoom</h1>
-      
-      <p className="text-sm">Message from the outside: ✅ {question}</p>
-
+    <div className="flex flex-col justify-center items-center py-10 gap-y-4 bg-gray-700 w-[90%]">
+      <h1>SecretRoom</h1>
+      <p className="text-purple-300">
+        Message for Secret Room:{" "}
+        <span className="text-yellow-300">
+          {question ? `✅ ${question}` : "⏳ Waiting for a message..."}
+        </span>
+      </p>
       <textarea
-        className="bg-white text-black mt-2 p-2 rounded w-full"
         value={answer}
-        onChange={(e) => setAnswer(e.target.value)}
+        onChange={handleAnswer}
+        className="bg-white text-black rounded px-2 py-1"
+        placeholder="Type your message here..."
       />
-
-      <p className="mt-4 text-sm text-green-400">Reply to the outside: ✅ {answer}</p>
+      <p className="text-green-300">
+        Reply to the outside:{" "}
+        <span className="text-sky-300">
+          {answer ? `✅ ${answer}` : "⏳ Waiting for a reply..."}
+        </span>
+      </p>
     </div>
   );
 }
